@@ -9,14 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
+    "@mobiscroll/react-lite": "^4.10.9",
+    "config": "^3.3.11",
+    "mobiscroll": "^3.0.0-beta6",
+    "next": "14.2.1",
+    "react": "^18.2.0",
     "react-dom": "^18",
-    "next": "14.2.1"
+    "react-error-boundary": "^4.0.13",
+    "tailwindcss-selector-patterns": "^0.0.9",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.1",
+    "eslint-plugin-react": "^7.34.1",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.1"
+    "react-icons": "^5.1.0",
+    "tailwindcss": "^3.4.1"
   }
 }
