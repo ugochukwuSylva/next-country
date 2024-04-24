@@ -5,6 +5,7 @@ const useStore = create((set) => {
     username: "",
     isLoading: false,
     countryData: [],
+    countriesDropdown: [],
     error: "",
     // setError: (err) => set(() => ({ error: err })),
     setUsername: (data) => set(() => ({ username: data.trim() })),
@@ -23,6 +24,23 @@ const useStore = create((set) => {
         console.error(err.message);
         // () => set({ error: err.message });
         // () => set((state) => ({ error: state.setError(err.message) }));
+      }
+    },
+    getCountriesDropdown: async () => {
+      try {
+        const res = await fetch(
+          "https://api.countrystatecity.in/v1/countries",
+          {
+            headers: {
+              "X-CSCAPI-KEY": process.env.NEXT_PUBLIC_API_KEY,
+            },
+          }
+        );
+        if (!res) throw new Error(res.status);
+        const data = await res.json();
+        set({ countriesDropdown: data });
+      } catch (err) {
+        console.error(err.message);
       }
     },
   };

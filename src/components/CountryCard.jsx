@@ -22,22 +22,27 @@ function CountryCard() {
         <LoadingMessage />
       </div>
     );
-
   const coatOfArm = coatOfArms?.png || coatOfArms?.svg;
   const flag = flags?.png || flags?.svg;
   const countryName = name?.official || name?.common;
   const map = maps?.googleMaps;
   //   const map2 = maps?.openStreetMaps
   //   const currency = Object.values(currencies)[0]?.name;
-  const currencyType = currencies && Object.keys(currencies).toString();
-  const currencySymbol = currencies && currencies[currencyType].symbol;
-  const currencyName = currencies && currencies[currencyType].name;
-
+  const currencyType =
+    (currencies && Object.keys(currencies)[0]) ||
+    (currencies && Object.keys(currencies)[1]) ||
+    (currencies && Object.keys(currencies)?.toString());
+  const currencySymbol = currencies && currencies[currencyType]?.symbol;
+  const currencyName = currencies && currencies[currencyType]?.name;
+  console.log(countryData);
   if (countryData.length === 0)
     return (
-      <h1 className="center">
-        Kick start by typing your search word in the search bar 🙂
-      </h1>
+      <div className="center text-center">
+        <p className="container">
+          Kick start by typing your search word in the search bar or select{" "}
+          <br /> a country from the dropdown menu 🙂
+        </p>
+      </div>
     );
 
   return (
@@ -71,10 +76,12 @@ function CountryCard() {
                 <span className="font-semibold">Capital:</span> {capital}
               </p>
 
-              <p>
-                <span className="font-semibold">Currency:</span>{" "}
-                {`${currencyName} (${currencySymbol})`}
-              </p>
+              {currencyName && currencySymbol && (
+                <p>
+                  <span className="font-semibold">Currency: </span>
+                  {`${currencyName} (${currencySymbol})`}
+                </p>
+              )}
               <Link
                 href={`${map}`}
                 target="_blank"

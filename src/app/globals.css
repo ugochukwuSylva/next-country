@@ -12,6 +12,6 @@
   }
 
   .container {
-    @apply text-lg p-2 w-[60%] rounded-md h-20 bg-white;
+    @apply text-lg p-2 w-[60%] rounded-md h-20 bg-white shadow-md;
   }
 }
