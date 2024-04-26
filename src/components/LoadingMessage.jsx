@@ -14,7 +14,7 @@ function LoadingMessage() {
   if (!count)
     return (
       <h1 className="center  container">
-        Country not found ☹. Please ensure you provide a valid query : )
+        Country not found ☹. Something went wrong : )
       </h1>
     );
 

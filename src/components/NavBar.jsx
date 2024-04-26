@@ -12,7 +12,7 @@ function NavBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    setQuery("");
     getCountry(query);
   }
 
@@ -25,9 +25,9 @@ function NavBar() {
 
       <form className="w-[20rem] relative" onSubmit={handleSubmit}>
         <input
-          defaultValue={query}
+          value={query}
           type="text"
-          className="w-full rounded-full p-2 border border-slate-300 focus:outline-2 focus:outline-blue-500 focus:scale-x-110 transition-scale duration-300"
+          className="w-full rounded-full p-2 border border-slate-300 focus:outline-2 focus:outline-blue-500 focus:sm:scale-x-110 sm:transition-scale sm:duration-300"
           placeholder="Enter country"
           onChange={(e) => setQuery(e.target.value)}
           required

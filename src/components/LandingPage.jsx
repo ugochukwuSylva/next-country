@@ -35,7 +35,8 @@ function LandingPage() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <button className="absolute top-1 right-1 border-none flex items-center hover:bg-red-300 bg-red-400 p-3 rounded-full tracking-wide uppercase cursor-pointer transition-all duration-400 ">
+
+        <button className="absolute top-1 right-1 border-none flex items-center hover:bg-blue-500 bg-blue-400 p-3 rounded-full tracking-wide uppercase cursor-pointer transition-all duration-400">
           Submit
         </button>
       </form>

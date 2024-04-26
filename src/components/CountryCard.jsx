@@ -3,6 +3,9 @@ import LoadingMessage from "./LoadingMessage";
 import { numberFormat } from "@/utils/helpers";
 import Link from "next/link";
 
+// const checkCountry = (countryName) =>
+//   countryArray.findIndex((country) => country.name === countryName);
+
 function CountryCard() {
   const { countryData, isLoading } = useStore();
   const {
@@ -16,12 +19,14 @@ function CountryCard() {
     maps,
     currencies,
   } = countryData[0] || [];
+
   if (isLoading)
     return (
       <div className="center">
         <LoadingMessage />
       </div>
     );
+
   const coatOfArm = coatOfArms?.png || coatOfArms?.svg;
   const flag = flags?.png || flags?.svg;
   const countryName = name?.official || name?.common;
@@ -34,7 +39,9 @@ function CountryCard() {
     (currencies && Object.keys(currencies)?.toString());
   const currencySymbol = currencies && currencies[currencyType]?.symbol;
   const currencyName = currencies && currencies[currencyType]?.name;
-  console.log(countryData);
+
+  // console.log(countryData);
+
   if (countryData.length === 0)
     return (
       <div className="center text-center">
@@ -48,7 +55,7 @@ function CountryCard() {
   return (
     <div className="center">
       <div className="h-[85%] w-[70%] rounded-md shadow-lg border py-4 px-10">
-        <h1 className="text-gradient text-3xl text-center truncate mt-[-0.5rem]">
+        <h1 className="text-gradient text-3xl text-center truncate mt-[-0.5rem] max-w-[55rem]">
           {countryName}
         </h1>
 
@@ -61,8 +68,8 @@ function CountryCard() {
                 className="h-[50%] w-[100%] object-cover"
               />
             </picture>
-            <div className="p-3 truncate">
-              <p>
+            <div className="p-2">
+              <p className="truncate">
                 <span className="font-semibold">Name:</span> {countryName}
               </p>
               <p>
