@@ -7,6 +7,7 @@ const useStore = create((set) => {
     countryData: [],
     countriesDropdown: [],
     error: "",
+    clearData: () => set(() => ({ countryData: [] })),
 
     // setError: (err) => set(() => ({ error: err })),
     setUsername: (data) => set(() => ({ username: data.trim() })),

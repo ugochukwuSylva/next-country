@@ -8,7 +8,7 @@ function LandingPage() {
   const setName = useStore((state) => state.setUsername);
   const name = useStore((state) => state.username);
 
-  function hanleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (name.length < 2) return;
     router.push("/home");
@@ -17,20 +17,20 @@ function LandingPage() {
   return (
     <>
       <div className="flex items-baseline">
-        <h1 className="text-gradient">Next country</h1>
-        <span className="text-6xl">🌍</span>
+        <h1 className="text-gradient ">Next country</h1>
+        <span className="text-4xl md:text-6xl">🌍</span>
       </div>
 
-      <p className="text-center text-xl mb-12">
+      <p className="text-center text-xl mb-12 px-3 text-stone-500">
         An application that provides a couple of fact based information <br />{" "}
         about any country in the world!
       </p>
 
-      <form className="w-[30rem] relative" onSubmit={hanleSubmit}>
+      <form className="w-[22rem] md:w-[30rem] relative" onSubmit={handleSubmit}>
         {/* focus:scale-x-110 transition-scale duration-300 */}
         <input
           type="text"
-          className="w-full rounded-full p-4 border border-slate-300 focus:outline-2 focus:outline-blue-500"
+          className="w-full rounded-full p-4 border border-slate-300 focus:outline-2 focus:outline-blue-500 "
           placeholder="Enter your username"
           onChange={(e) => setName(e.target.value)}
           required

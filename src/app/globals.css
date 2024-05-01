@@ -8,7 +8,7 @@
   }
 
   .text-gradient {
-    @apply font-extrabold text-6xl uppercase mb-10 bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent;
+    @apply font-extrabold text-4xl md:text-6xl uppercase mb-10 bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent;
   }
 
   .container {

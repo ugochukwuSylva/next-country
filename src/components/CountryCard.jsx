@@ -6,8 +6,12 @@ import Link from "next/link";
 // const checkCountry = (countryName) =>
 //   countryArray.findIndex((country) => country.name === countryName);
 
-function CountryCard() {
+function CountryCard({ query }) {
   const { countryData, isLoading } = useStore();
+  let index;
+
+  query === "china" ? (index = 3) : (index = 0);
+
   const {
     coatOfArms,
     flags,
@@ -18,7 +22,7 @@ function CountryCard() {
     continents,
     maps,
     currencies,
-  } = countryData[0] || [];
+  } = countryData[index] || [];
 
   if (isLoading)
     return (
@@ -40,35 +44,35 @@ function CountryCard() {
   const currencySymbol = currencies && currencies[currencyType]?.symbol;
   const currencyName = currencies && currencies[currencyType]?.name;
 
-  // console.log(countryData);
-
   if (countryData.length === 0)
     return (
-      <div className="center text-center">
-        <p className="container">
-          Kick start by typing your search word in the search bar or select{" "}
-          <br /> a country from the dropdown menu 🙂
+      <div className="center h-[85vh]">
+        <p className=" px-4 text-center w-full lg:container">
+          Kick start by typing your search word in the search bar <br />
+          <span className="hidden md:block">
+            or select a country from the dropdown menu 🙂
+          </span>
         </p>
       </div>
     );
 
   return (
-    <div className="center">
-      <div className="h-[85%] w-[70%] rounded-md shadow-lg border py-4 px-10">
-        <h1 className="text-gradient text-3xl text-center truncate mt-[-0.5rem] max-w-[55rem]">
+    <div className="mx-auto md:w-[50rem]  pt-10">
+      <div className="mx-auto md:w-[35.5rem] md:min-w-[40rem]  rounded-md shadow-lg border py-4 px-0 md:px-10">
+        <h1 className="text-gradient text-xl lg:text-3xl text-center truncate mb-[2.5rem] lg:mb-[2rem] max-w-[55rem] ">
           {countryName}
         </h1>
 
-        <div className="w-[90%] h-[86%] mt-[-1rem] mx-auto flex justify-center items-center gap-5">
-          <div className="border-2 h-[100%] w-[100%] overflow-hidden text-md">
+        <div className=" w-[22rem] md:w-[35rem] md:h-[86%] ml-3 mt-[-1rem]  flex flex-col justify-center items-center gap-5 md:flex-row">
+          <div className="border-2 h-[100%] w-[20rem] md:w-[100%]  text-md">
             <picture>
               <img
                 src={`${flag}`}
                 alt="flag"
-                className="h-[50%] w-[100%] object-cover"
+                className="object-cover w-[100%] h-[50%]"
               />
             </picture>
-            <div className="p-2">
+            <div className="p-2 whitespace-nowrap">
               <p className="truncate">
                 <span className="font-semibold">Name:</span> {countryName}
               </p>
@@ -80,12 +84,13 @@ function CountryCard() {
                 <span className="font-semibold">Continent:</span> {continents}
               </p>
               <p>
-                <span className="font-semibold">Capital:</span> {capital}
+                <span className="font-semibold">Capital:</span>{" "}
+                {capital ? capital : "N/A"}
               </p>
 
               {currencyName && currencySymbol && (
                 <p>
-                  <span className="font-semibold">Currency: </span>
+                  <span className="font-semibold truncate">Currency: </span>
                   {`${currencyName} (${currencySymbol})`}
                 </p>
               )}
@@ -99,11 +104,12 @@ function CountryCard() {
             </div>
           </div>
           {/*  */}
-          <picture className="h-[100%] w-[100%] center">
+
+          <picture className="h-[100%] w-[20rem] md:w-[35rem] center">
             <img
               src={coatOfArm ? coatOfArm : ""}
               alt="coat of arm"
-              className="object-contain object-center w-[100%] h-[100%]"
+              className="object-contain object-center w-[100%]"
             />
           </picture>
         </div>
