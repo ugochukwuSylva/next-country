@@ -34,7 +34,8 @@ const useStore = create((set) => {
           "https://api.countrystatecity.in/v1/countries",
           {
             headers: {
-              "X-CSCAPI-KEY": process.env.NEXT_PUBLIC_API_KEY,
+              "X-CSCAPI-KEY":
+                "RnFmbDVoY1lpMThxaElBOUNncVNXbDJWaHN5cVQ5Mzl1Ym92Y2VEbw==",
             },
           }
         );
