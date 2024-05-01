@@ -15,7 +15,7 @@ function NavBar({ query, setQuery }) {
   }
 
   return (
-    <nav className="overflow-hidden flex justify-between  items-center py-4 px-2 md:px-6 shadow  shadow-stone-300  min-h-[4rem] md:min-h-20">
+    <nav className="overflow-hidden flex justify-between  items-center py-4 px-2 md:px-6 shadow  shadow-stone-300  h-[4rem] md:min-h-20">
       <p className="text-md md:text-xl text-stone-600 whitespace-nowrap w-full truncate">
         👋 Welcome
         <span className="tracking-wide font-extrabold  ml-2 md:ml-5  ">
