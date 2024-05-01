@@ -19,9 +19,7 @@ function SideBar() {
         onChange={(e) => getCountry(e.target.value)}
         className="text-sm w-[100%]  border border-slate-300 focus:outline-2 focus:outline-blue-500 cursor-pointer truncate py-1"
       >
-        <option disabled selected hidden className="text-center">
-          -- SELECT COUNTRY --
-        </option>
+        <option>-- SELECT COUNTRY --</option>
         {countriesDropdown?.map((country) => (
           <option value={country.name} key={country.name} className="text-sm">
             {country.name}
