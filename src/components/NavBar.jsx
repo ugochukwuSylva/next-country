@@ -27,7 +27,7 @@ function NavBar({ query, setQuery }) {
         <input
           value={query}
           type="text"
-          className="w-full rounded-full p-1 md:p-2 border border-slate-300 focus:outline-2 focus:outline-blue-500 focus:sm:scale-x-110 sm:transition-scale sm:duration-300"
+          className="text-sm md:text-md text-stone-600 w-full rounded-full p-1 md:p-2 border border-slate-300 focus:outline-2 focus:outline-blue-500 focus:sm:scale-x-110 sm:transition-scale sm:duration-300"
           placeholder="Enter country"
           onChange={(e) => setQuery(e.target.value)}
           required

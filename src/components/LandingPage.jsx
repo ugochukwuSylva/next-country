@@ -30,7 +30,7 @@ function LandingPage() {
         {/* focus:scale-x-110 transition-scale duration-300 */}
         <input
           type="text"
-          className="w-full rounded-full p-4 border border-slate-300 focus:outline-2 focus:outline-blue-500 "
+          className="text-stone-600 w-full rounded-full p-4 border border-slate-300 focus:outline-2 focus:outline-blue-500 "
           placeholder="Enter your username"
           onChange={(e) => setName(e.target.value)}
           required
