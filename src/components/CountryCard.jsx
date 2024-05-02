@@ -10,7 +10,7 @@ function CountryCard({ query }) {
   const { countryData, isLoading } = useStore();
   let index;
 
-  query === "china" ? (index = 3) : (index = 0);
+  query.toLowerCase() === "china" ? (index = 3) : (index = 0);
 
   const {
     coatOfArms,

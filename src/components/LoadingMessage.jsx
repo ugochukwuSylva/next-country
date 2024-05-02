@@ -13,7 +13,7 @@ function LoadingMessage() {
 
   if (!count)
     return (
-      <h1 className="center  container">
+      <h1 className=" h-[87vh]  center w-[24rem] md:w-[35rem] whitespace-nowrap  md:container">
         Country not found ☹. Something went wrong : )
       </h1>
     );
