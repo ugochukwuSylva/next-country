@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function LoadingMessage() {
-  const [count, setCount] = useState(4);
+  const [count, setCount] = useState(8);
 
   useEffect(() => {
     const id = setTimeout(() => {

@@ -3,8 +3,10 @@ import LoadingMessage from "./LoadingMessage";
 import { numberFormat } from "@/utils/helpers";
 import Link from "next/link";
 
-// const checkCountry = (countryName) =>
-//   countryArray.findIndex((country) => country.name === countryName);
+// const checkCountry = (officialName) =>
+// const checkCountry = (officialName) =>
+//   countryArray.findIndex((country) => country.name === officialName);
+//   countryArray.findIndex((country) => country.name === officialName);
 
 function CountryCard({ query }) {
   const { countryData, isLoading } = useStore();
@@ -33,7 +35,8 @@ function CountryCard({ query }) {
 
   const coatOfArm = coatOfArms?.png || coatOfArms?.svg;
   const flag = flags?.png || flags?.svg;
-  const countryName = name?.official || name?.common;
+  const officialName = name?.official || name?.common;
+  const commonName = name?.common || name?.official;
   const map = maps?.googleMaps;
   //   const map2 = maps?.openStreetMaps
   //   const currency = Object.values(currencies)[0]?.name;
@@ -58,13 +61,13 @@ function CountryCard({ query }) {
 
   return (
     <div className="mx-auto md:w-[50rem]  pt-10">
-      <div className="mx-auto md:w-[35.5rem] md:min-w-[40rem]  rounded-md shadow-lg border py-4 px-0 md:px-10">
+      <div className="w-[24rem]   mx-auto md:w-[35.5rem] md:min-w-[40rem]  rounded-md shadow-lg border py-4 px-2 md:px-10">
         <h1 className="text-gradient text-xl lg:text-3xl text-center truncate mb-[2.5rem] lg:mb-[2rem] max-w-[55rem] ">
-          {countryName}
+          {officialName}
         </h1>
 
         <div className=" w-[22rem] md:w-[35rem] md:h-[86%] ml-3 mt-[-1rem]  flex flex-col justify-center items-center gap-5 md:flex-row">
-          <div className="border-2 h-[100%] w-[20rem] md:w-[100%]  text-md">
+          <div className="border-2 h-[100%] w-[20rem] md:w-[100%] truncate  text-md">
             <picture>
               <img
                 src={`${flag}`}
@@ -74,17 +77,19 @@ function CountryCard({ query }) {
             </picture>
             <div className="p-2 whitespace-nowrap">
               <p className="truncate">
-                <span className="font-semibold">Name:</span> {countryName}
+                <span className="font-semibold truncate">Name:</span>{" "}
+                {commonName}
               </p>
               <p>
-                <span className="font-semibold">Population:</span>{" "}
+                <span className="font-semibold truncate">Population:</span>{" "}
                 {numberFormat(population)}
               </p>
               <p className="">
-                <span className="font-semibold">Continent:</span> {continents}
+                <span className="font-semibold truncate">Continent:</span>{" "}
+                {continents}
               </p>
               <p>
-                <span className="font-semibold">Capital:</span>{" "}
+                <span className="font-semibold truncate">Capital:</span>{" "}
                 {capital ? capital : "N/A"}
               </p>
 
