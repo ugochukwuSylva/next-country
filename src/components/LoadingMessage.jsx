@@ -19,9 +19,9 @@ function LoadingMessage() {
     );
 
   return (
-    <div className="center">
-      <p className=" text-lg font-semibold">
-        <em>LOADING...</em>
+    <div className="center h-[87vh] w-[24rem]">
+      <p className=" text-lg font-semibold w-full">
+        <em className="center">LOADING...</em>
       </p>
     </div>
   );
