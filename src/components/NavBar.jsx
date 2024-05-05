@@ -1,21 +1,22 @@
 "use client";
 
 import useStore from "@/app/zustand/store";
+import DropdownMenu from "./DropdownMenu";
 
 // import { IoSearchOutline } from "react-icons/io5";
 
-function NavBar({ query, setQuery }) {
+function NavBar() {
   const name = useStore((state) => state.username).toUpperCase();
-  const { getCountry } = useStore();
+  // const { getCountry } = useStore();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // setQuery("");
-    getCountry(query);
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   // setQuery("");
+  //   getCountry(query);
+  // }
 
   return (
-    <nav className="overflow-hidden flex justify-between  items-center py-4 px-2 md:px-6 shadow  shadow-stone-300  h-[4rem] md:min-h-20">
+    <nav className="overflow-hidden flex justify-between  items-center py-4 px-2 md:px-12 shadow  shadow-stone-300  h-[4rem] md:min-h-20">
       <p className="text-md md:text-xl text-stone-600 whitespace-nowrap w-full truncate">
         👋 Welcome
         <span className="tracking-wide font-extrabold  ml-2 md:ml-5  ">
@@ -23,7 +24,7 @@ function NavBar({ query, setQuery }) {
         </span>
       </p>
 
-      <form className="w-[13rem] md:w-[20rem] relative" onSubmit={handleSubmit}>
+      {/* <form className="w-[13rem] md:w-[20rem] relative" onSubmit={handleSubmit}>
         <input
           value={query}
           type="text"
@@ -32,12 +33,8 @@ function NavBar({ query, setQuery }) {
           onChange={(e) => setQuery(e.target.value)}
           required
         />
-
-        {/* <IoSearchOutline
-          size={22}
-          // className="absolute right-2.5 top-2.5"
-        /> */}
-      </form>
+      </form> */}
+      <DropdownMenu />
     </nav>
   );
 }

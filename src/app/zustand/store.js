@@ -16,7 +16,7 @@ const useStore = create((set) => {
 
       try {
         const res = await fetch(
-          `https://restcountries.com/v3.1/name/${country}`
+          `https://restcountries.com/v3.1/name/${country}?fullText=true`
         );
         if (!res.ok)
           throw new Error(`Country not found ☹ (Error ${res.status})`);

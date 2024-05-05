@@ -1,5 +1,5 @@
 function Country({ children }) {
-  return <div className=" grid grid-cols-[auto_1fr]">{children}</div>;
+  return <div className="center">{children}</div>;
 }
 
 export default Country;

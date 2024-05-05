@@ -1,7 +1,7 @@
 ## This is a Nextjs application
 
 Global state manager: Zustand
-CSS: Tailwind Css
+CSS: Tailwind
 
 ## Overview:
 
